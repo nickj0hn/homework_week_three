@@ -10,6 +10,13 @@ function writePassword(){
 
 function generatePassword() {
   var passwordLength = (prompt("How long do you want your password to be? (must be between 8 and 128)"));
+// used while statement to add restrictions on length. (https://www.w3schools.com/JSREF/jsref_while.asp)
+  while(passwordLength <= 7 || passwordLength >= 129) {
+
+    alert("Password length must be between 8 and 128 Please re-enter preference.");
+
+    var passwordLength = (prompt("How long do you want your password to be? (must be between 8 and 128)"));
+    } 
 
   // using code from https://stackoverflow.com/questions/17907455/how-to-get-numeric-value-from-a-prompt-box in order to plug it in to code below
   var userLengthChoice = parseInt(passwordLength);
