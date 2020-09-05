@@ -8,13 +8,11 @@ var passwordSpec = "#@!%&()/";
 
 var passwordChars = "abcdefghijklmnopqrstuvwxyz";
 
-
 function writePassword(){
   password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
 function generatePassword() {
   var passwordLength = (prompt("How long do you want your password to be? (must be between 8 and 128)"));
 // used while statement to add restrictions on length. (https://www.w3schools.com/JSREF/jsref_while.asp)
@@ -26,32 +24,19 @@ function generatePassword() {
   var userLengthChoice = parseInt(passwordLength);
 
   // using 'confirm() Method' - https://www.w3schools.com/jsref/met_win_confirm.asp 
-
   var upperCase = (confirm("Do you wish to include uppercase characters?"));
     if (upperCase == true) {
       var passwordChars = passwordChars + passwordUpper;
     }
-  
   var upperCase = (confirm("Do you wish to include special characters?"));
   if (upperCase == true) {
    var passwordChars = passwordChars + passwordSpec;
     }
-
   var upperCase = (confirm("Do you wish to include numbers?"));
    if (upperCase == true) {
      var passwordChars = passwordChars + passwordNum;
      }
-
-
-
-
   // using code from https://www.codespeedy.com/how-to-generate-a-random-password-in-javascript/ 
   var randPassword = Array(userLengthChoice).fill(passwordChars).map(function(x) { return x[Math.floor(Math.random() * x.length)] }).join('');
   return randPassword;
 }
-
-
-
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
