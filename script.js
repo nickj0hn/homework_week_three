@@ -28,12 +28,12 @@ function generatePassword() {
     if (upperCase == true) {
       var passwordChars = passwordChars + passwordUpper;
     }
-  var upperCase = (confirm("Do you wish to include special characters?"));
-  if (upperCase == true) {
+  var specialChar = (confirm("Do you wish to include special characters?"));
+  if (specialChar == true) {
    var passwordChars = passwordChars + passwordSpec;
     }
-  var upperCase = (confirm("Do you wish to include numbers?"));
-   if (upperCase == true) {
+  var useNumbers = (confirm("Do you wish to include numbers?"));
+   if (useNumbers == true) {
      var passwordChars = passwordChars + passwordNum;
      }
   // using code from https://www.codespeedy.com/how-to-generate-a-random-password-in-javascript/ 
